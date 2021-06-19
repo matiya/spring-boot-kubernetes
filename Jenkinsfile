@@ -40,7 +40,6 @@ pipeline {
                     }
                 }
            }
-        }
 
         stage ('SCA') {
             steps {
@@ -49,3 +48,4 @@ pipeline {
         }
 
     }
+}
