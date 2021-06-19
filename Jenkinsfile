@@ -15,7 +15,7 @@ pipeline {
         }
 	    stage ('Compile') {
             tools {
-          	    jdk 'JDK11'
+          	    jdk 'java11'
               }
             steps {
                  sh 'mvn clean compile -e'
@@ -23,7 +23,7 @@ pipeline {
         }
       stage ('Test') {
             tools {
-          	    jdk 'JDK11'
+          	    jdk 'java11'
               }
             steps {
                  sh 'mvn clean test -e'
@@ -32,7 +32,7 @@ pipeline {
 
         stage('SAST') {
            tools {
-          	    jdk 'JDK11'
+          	    jdk 'java11'
               }
            steps{
                 script {
