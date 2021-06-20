@@ -36,7 +36,10 @@ pipeline {
               }
            steps{
                 script {
-                echo "TODO"
+                  def scannerHome = tool 'sonarqube-scanner';
+                  withSonarQubeEnv('sonar-server'){
+                    sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=springboot-curso-devsecops -Dsonar.sources=target/ -Dsonar.host.url=http://sonarqube:9000 -Dsonar.login=04a1d38da9b0bc8a33a993119bd2c3dc7a86691a"
+                  }
                     }
                 }
            }
